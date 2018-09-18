@@ -1,8 +1,16 @@
 # Cordova Purchase Plugin
 
-[![Build Status](https://travis-ci.org/j3k0/cordova-plugin-purchase.svg)](https://travis-ci.org/j3k0/cordova-plugin-purchase) [![Coverage Status](https://img.shields.io/coveralls/j3k0/cordova-plugin-purchase.svg)](https://coveralls.io/r/j3k0/cordova-plugin-purchase)
+[![Build Status](https://travis-ci.org/j3k0/cordova-plugin-purchase.svg)](https://travis-ci.org/j3k0/cordova-plugin-purchase)
 
 **Author**: Jean-Christophe Hoelt - <hoelt@fovea.cc>
+
+**Active Contributors**:
+
+ * [Josef Fröhle](https://github.com/Dexus)
+
+---
+
+Need professional help and support? [Contact us](mailto:contact@fovea.cc)!
 
 ## Summary
 
@@ -68,7 +76,7 @@ See [Setup iOS Applications](https://github.com/j3k0/cordova-plugin-purchase/wik
 ## Getting Started
 
 If you don't know much about In-App Purchases, you'll find a good introduction
-on the subject here: [In-App Purchase Guidelines](https://developer.apple.com/in-app-purchase/In-App-Purchase-Guidelines.pdf).
+on the subject here: [In-App Purchase Guidelines](https://developer.apple.com/in-app-purchase/).
 It's from Apple, but the exact same concepts apply to Android.
 
 You probably want to start by installing the plugin into your project.
@@ -90,11 +98,11 @@ You're all good? Time to read some more documentation. Hooray!
  - [Documentation for Android](doc/android.md)
  - [Documentation for Windows](doc/windows.md)
 
-## Resources
+## Extra Resources
 
 ### for iOS
 
- - [Getting Started with In-App Purchase on iOS](https://developer.apple.com/in-app-purchase/In-App-Purchase-Guidelines.pdf)
+ - [Getting Started with In-App Purchase on iOS](https://developer.apple.com/in-app-purchase/)
    - Read about the business models supported by In-App Purchase and the types of items you can sell in your app.
  - [In-App Purchase Configuration Guide for iTunes Connect](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/Introduction.html)
    - Learn how to set up and manage In-App Purchases with iTunes Connect.
@@ -110,6 +118,7 @@ You're all good? Time to read some more documentation. Hooray!
  * Matt Kane (initial iOS code)
  * Mohammad Naghavi (original unification attempt)
  * Dave Alden [@dpa99c](https://github.com/dpa99c)(Apple-hosted IAPs for iOS)
+ * Josef Fröhle
 
 ## Sponsors
 Big thanks to:

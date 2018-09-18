@@ -43,7 +43,7 @@ store.Product = function(options) {
     ///  - `product.description` - Localized longer description
     this.description = options.description || options.localizedDescription || null;
 
-    ///  - `product.priceMicros` - Localized price, in micro-units. Available only on Android
+    ///  - `product.priceMicros` - Localized price, in micro-units (divide by 1000000 to get numeric price)
     this.priceMicros = options.priceMicros || null;
 
     ///  - `product.price` - Localized price, with currency symbol
@@ -51,6 +51,9 @@ store.Product = function(options) {
 
     ///  - `product.currency` - Currency code (optionaly)
     this.currency = options.currency || null;
+
+    ///  - `product.countryCode` - Country code. Available only on iOS
+    this.countryCode = options.countryCode || null;
 
     //  - `product.localizedTitle` - Localized name or short description ready for display
     // this.localizedTitle = options.localizedTitle || options.title || null;
@@ -158,6 +161,8 @@ store.Product.prototype.verify = function() {
         store._validator(that, function(success, data) {
             store.log.debug("verify -> " + JSON.stringify(success));
             if (success) {
+                if (that.expired)
+                    that.set("expired", false);
                 store.log.debug("verify -> success: " + JSON.stringify(data));
                 store.utils.callExternal('verify.success', successCb, that, data);
                 store.utils.callExternal('verify.done', doneCb, that);
@@ -165,6 +170,7 @@ store.Product.prototype.verify = function() {
             }
             else {
                 store.log.debug("verify -> error: " + JSON.stringify(data));
+                if (!data) data = {};
                 var msg = (data && data.error && data.error.message ? data.error.message : '');
                 var err = new store.Error({
                     code: store.ERR_VERIFICATION_FAILED,
@@ -184,6 +190,7 @@ store.Product.prototype.verify = function() {
                         });
                     }
                     else {
+                        that.set("expired", true);
                         store.error(err);
                         store.utils.callExternal('verify.error', errorCb, err);
                         store.utils.callExternal('verify.done', doneCb, that);
